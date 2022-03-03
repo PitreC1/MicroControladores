@@ -2,8 +2,7 @@
 [d version 1.1 ]
 [d edition pro ]
 [d chip 16F887 ]
-"1348 C:\Program Files (x86)\microchip\xc8\v1.00\include\pic16f887.h
-[s S22 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S19 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -12,40 +11,25 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S28 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-"325
-[s S54 . 1 `uc 1 PS 1 0 :3:0 
+[u S33 . 1 `S19 1 . 1 0 `S28 1 . 1 0 ]
+"325 C:\Program Files (x86)\microchip\xc8\v1.00\include\pic16f887.h
+[s S51 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 `uc 1 INTEDG 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S61 . 1 `uc 1 PS0 1 0 :1:0 
+[s S58 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S65 . 1 `S54 1 . 1 0 `S61 1 . 1 0 ]
-"156 C:\Program Files (x86)\microchip\xc8\v1.00\include\pic.h
-[s S90 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-[s S99 . 1 `uc 1 RA 1 0 :8:0 
-]
-[u S101 . 1 `S90 1 . 1 0 `S99 1 . 1 0 ]
-"54 temp_test.c
-[v F1793 `(v  1 t 0 ]
+[u S62 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
 "5 C:\Program Files (x86)\microchip\xc8\v1.00\sources\abdiv.c
 [v ___abdiv `(c  1 e 1 0 ]
 "5 C:\Program Files (x86)\microchip\xc8\v1.00\sources\abmod.c
@@ -146,10 +130,8 @@
 [v ___fttoee `(f  1 e 3 0 ]
 "132
 [v ___fltoee `(d  1 e 3 0 ]
-"13 temp_test.c
-[v _main `(i  1 e 2 0 ]
-"54
-[v _ISR_TIMER_0 `I(v  1 e 0 0 ]
+"9 Prueba_Temp.c
+[v _main `(v  1 e 0 0 ]
 "1256 /Volumes/build/bamboo/xml-data/build-dir/XC-V10-JOB1/nz/build/dist/osx/include/pic16f887.h
 [v _EEDATA `VEuc  1 e 1 @268 ]
 "1273
@@ -170,25 +152,9 @@
 [v _WREN `VEb  1 e 0 @3170 ]
 "152 C:\Program Files (x86)\microchip\xc8\v1.00\include\pic16f887.h
 [v _TMR0 `VEuc  1 e 1 @1 ]
-[s S90 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"222
-[s S99 . 1 `uc 1 RA 1 0 :8:0 
-]
-[u S101 . 1 `S90 1 . 1 0 `S99 1 . 1 0 ]
-[v _PORTAbits `VES101  1 e 1 @5 ]
-"225
-[v _PORTB `VEuc  1 e 1 @6 ]
 "263
 [v _PORTD `VEuc  1 e 1 @8 ]
-[s S22 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S19 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -198,14 +164,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "325
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S28 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-[v _INTCONbits `VES36  1 e 1 @11 ]
-[s S54 . 1 `uc 1 PS 1 0 :3:0 
+[u S33 . 1 `S19 1 . 1 0 `S28 1 . 1 0 ]
+[v _INTCONbits `VES33  1 e 1 @11 ]
+[s S51 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -213,46 +179,22 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "687
-[s S61 . 1 `uc 1 PS0 1 0 :1:0 
+[s S58 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S65 . 1 `S54 1 . 1 0 `S61 1 . 1 0 ]
-[v _OPTION_REGbits `VES65  1 e 1 @129 ]
+[u S62 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
+[v _OPTION_REGbits `VES62  1 e 1 @129 ]
 "747
 [v _TRISD `VEuc  1 e 1 @136 ]
 "1332
 [v _ANSEL `VEuc  1 e 1 @392 ]
-"1348
-[v _ANSELH `VEuc  1 e 1 @393 ]
 "1674
 [v _TRISA4 `VEb  1 e 0 @1068 ]
-"1678
-[v _TRISB0 `VEb  1 e 0 @1072 ]
-"9 temp_test.c
+"7 Prueba_Temp.c
 [v _count `uc  1 e 1 0 ]
-"10
-[v _count_ms `uc  1 e 1 0 ]
-"11
-[v _display `[10]uc  1 e 10 0 ]
-"13
-[v _main `(i  1 e 2 0 ]
+"9
+[v _main `(v  1 e 0 0 ]
 {
-"52
-} 0
-"5 C:\Program Files (x86)\microchip\xc8\v1.00\sources\awmod.c
-[v ___awmod `(i  1 e 2 0 ]
-{
-"6
-[v ___awmod@sign `uc  1 a 1 5 ]
-[v ___awmod@counter `uc  1 a 1 4 ]
-"5
-[v ___awmod@divisor `i  1 p 2 0 ]
-[v ___awmod@dividend `i  1 p 2 2 ]
 "30
-} 0
-"54 temp_test.c
-[v _ISR_TIMER_0 `I(v  1 e 0 0 ]
-{
-"67
 } 0

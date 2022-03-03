@@ -3,9 +3,9 @@ HI-TECH Software XC8 Compiler V1.00 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\microchip\xc8\v1.00\dat\en_msgs.txt -cs \
-  -h+dist/default/production\temporizador.X.production.sym -z -Q16F887 \
-  -ol.obj -Mdist/default/production/temporizador.X.production.map -E1 \
-  -ver=XC8 -ACONST=00h-0FFhx32 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
+  -h+dist/default/debug\temporizador.X.debug.sym -z -Q16F887 -ol.obj \
+  -Mdist/default/debug/temporizador.X.debug.map -E1 -ver=XC8 \
+  -ACONST=00h-0FFhx32 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -AENTRY=00h-0FFhx32 -ASTRING=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
   -ABANK3=0190h-01EFh -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
@@ -15,8 +15,8 @@ Linker command line:
   -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h \
   -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA \
   -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\CARLOS~1\AppData\Local\Temp\s858.obj \
-  dist/default/production\temporizador.X.production.obj 
+  C:\Users\CARLOS~1\AppData\Local\Temp\s7pc.obj \
+  dist/default/debug\temporizador.X.debug.obj 
 
 Object code version is 3.10
 
@@ -25,10 +25,10 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\CARLOS~1\AppData\Local\Temp\s858.obj
+C:\Users\CARLOS~1\AppData\Local\Temp\s7pc.obj
                 end_init                             12       12        3        8       0
                 reset_vec                             0        0        3        0       0
-dist/default/production\temporizador.X.production.obj
+dist/default/debug\temporizador.X.debug.obj
                 intentry                              4        4        E        8       0
                 config                             2007     2007        2     400E       0
                 text90                               E0       E0       2F        8       0

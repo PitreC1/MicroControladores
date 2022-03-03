@@ -131,7 +131,7 @@ config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 77 COMMON 70 1
 dataBANK0 20 31 BANK0 20 1
 %locals
-dist/default/production\temporizador.X.production.obj
+dist/default/debug\temporizador.X.debug.obj
 temp_test.c
 4 2007 0 CONFIG 0
 5 2008 0 CONFIG 0

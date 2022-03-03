@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC LITE Macro Assembler V1.00 build 12136 
-                                                                                               Thu Mar 03 17:59:20 2022
+                                                                                               Thu Mar 03 17:59:46 2022
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 12136
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 12136"
@@ -101,7 +101,7 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 12136
     94  0188                     _ANSEL	set	0x188
     95                           	global	_ANSELH
     96  0189                     _ANSELH	set	0x189
-    97                           	file	"C:\Users\CARLOS~1\AppData\Local\Temp\s858."
+    97                           	file	"C:\Users\CARLOS~1\AppData\Local\Temp\s7pc."
     98                           	line	#
     99                           psect cinit,class=CODE,delta=2
    100                           global start_initialization
@@ -1148,7 +1148,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 HI-TECH Software PICC Macro Assembler V1.00 build 12136 
-Symbol Table                                                                                   Thu Mar 03 17:59:20 2022
+Symbol Table                                                                                   Thu Mar 03 17:59:46 2022
 
                    pc 0002                    l33 00A2                    l34 00DB                    l35 00DC  
                   l36 00DD                    l37 00DD                    fsr 0004                   l340 0025  
