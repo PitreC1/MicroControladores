@@ -1,0 +1,12 @@
+_LCD_String: CODE, 851 0 33
+_LCD_Init: CODE, 966 0 43
+_keyfind: CODE, 1710 0 338
+_LCD_Command: CODE, 1061 0 52
+_LCD_String_xy: CODE, 925 0 41
+_main: CODE, 1297 0 194
+_Secuencia_Clave: CODE, 1491 0 219
+_LCD_Char: CODE, 1009 0 52
+_Logica_SensoresHall: CODE, 1113 0 184
+_strcmp: CODE, 884 0 41
+_LCD_Clear: CODE, 769 0 7
+Total: 1204
