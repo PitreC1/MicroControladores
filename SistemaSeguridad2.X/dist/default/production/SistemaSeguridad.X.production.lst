@@ -1,0 +1,672 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V1.00 build 12136 
+                                                                                               Tue Mar 15 23:49:49 2022
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 12136
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 12136"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F887
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 7 "sistemaSeguridad.c"
+    43                           psect config,class=CONFIG,delta=2 ;# 
+    44                           # 7 "sistemaSeguridad.c"
+    45  2007  E0D5               dw 0xFFFD & 0xFFF7 & 0xFFFF & 0xFFDF & 0xFFFF & 0xFFFF & 0xFCFF & 0xFBFF & 0xF7FF & 0xEF
+                                 FF ;# 
+    46                           # 8 "sistemaSeguridad.c"
+    47                           psect config,class=CONFIG,delta=2 ;# 
+    48                           # 8 "sistemaSeguridad.c"
+    49  2008  FFFF               dw 0xFFFF & 0xFFFF ;# 
+    50                           	FNROOT	_main
+    51                           	global	_contador1
+    52                           	global	_contador2
+    53                           	global	_PORTBbits
+    54  0006                     _PORTBbits	set	0x6
+    55                           	global	_PORTD
+    56  0008                     _PORTD	set	0x8
+    57                           	global	_PORTDbits
+    58  0008                     _PORTDbits	set	0x8
+    59                           	global	_TRISD
+    60  0088                     _TRISD	set	0x88
+    61                           	global	_ANSEL
+    62  0188                     _ANSEL	set	0x188
+    63                           	global	_ANSELH
+    64  0189                     _ANSELH	set	0x189
+    65                           psect	maintext,global,class=CODE,delta=2,split=1
+    66                           global __pmaintext
+    67  079A                     __pmaintext:
+    68                           	file	"C:\Users\CARLOS~1\AppData\Local\Temp\s5ao."
+    69                           	line	#
+    70                           psect cinit,class=CODE,delta=2
+    71                           global start_initialization
+    72  0792                     start_initialization:
+    73                           
+    74                           psect	bssCOMMON,class=COMMON,space=1
+    75                           global __pbssCOMMON
+    76  0070                     __pbssCOMMON:
+    77  0070                     _contador1:
+    78  0070                            ds      2
+    79                           
+    80  0072                     _contador2:
+    81  0072                            ds      2
+    82                           
+    83                           ; Clear objects allocated to COMMON
+    84                           psect cinit,class=CODE,delta=2,merge=1
+    85  0792  01F0               	clrf	((__pbssCOMMON)+0)&07Fh
+    86  0793  01F1               	clrf	((__pbssCOMMON)+1)&07Fh
+    87  0794  01F2               	clrf	((__pbssCOMMON)+2)&07Fh
+    88  0795  01F3               	clrf	((__pbssCOMMON)+3)&07Fh
+    89                           psect cinit,class=CODE,delta=2,merge=1
+    90                           global end_of_initialization
+    91                           
+    92                           ;End of C runtime variable initialization code
+    93                           
+    94  0796                     end_of_initialization:
+    95  0796  0183               clrf status
+    96  0797  120A  118A  2F9A   ljmp _main	;jump to C main() function
+    97                           psect	cstackCOMMON,class=COMMON,space=1
+    98                           global __pcstackCOMMON
+    99  0000                     __pcstackCOMMON:
+   100                           	global	?_main
+   101  0000                     ?_main:	; 0 bytes @ 0x0
+   102                           	global	??_main
+   103  0000                     ??_main:	; 0 bytes @ 0x0
+   104                           ;!
+   105                           ;!Data Sizes:
+   106                           ;!    Strings     0
+   107                           ;!    Constant    0
+   108                           ;!    Data        0
+   109                           ;!    BSS         4
+   110                           ;!    Persistent  0
+   111                           ;!    Stack       0
+   112                           ;!
+   113                           ;!Auto Spaces:
+   114                           ;!    Space          Size  Autos    Used
+   115                           ;!    COMMON           14      0       4
+   116                           ;!    BANK0            80      0       0
+   117                           ;!    BANK1            80      0       0
+   118                           ;!    BANK3            96      0       0
+   119                           ;!    BANK2            96      0       0
+   120                           
+   121                           ;!
+   122                           ;!Pointer List with Targets:
+   123                           ;!
+   124                           ;!    None.
+   125                           
+   126                           
+   127                           ;!
+   128                           ;!Critical Paths under _main in COMMON
+   129                           ;!
+   130                           ;!    None.
+   131                           ;!
+   132                           ;!Critical Paths under _main in BANK0
+   133                           ;!
+   134                           ;!    None.
+   135                           ;!
+   136                           ;!Critical Paths under _main in BANK1
+   137                           ;!
+   138                           ;!    None.
+   139                           ;!
+   140                           ;!Critical Paths under _main in BANK3
+   141                           ;!
+   142                           ;!    None.
+   143                           ;!
+   144                           ;!Critical Paths under _main in BANK2
+   145                           ;!
+   146                           ;!    None.
+   147                           
+   148 ;;
+   149 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   150 ;;
+   151                           
+   152                           ;!
+   153                           ;!Call Graph Tables:
+   154                           ;!
+   155                           ;! ---------------------------------------------------------------------------------
+   156                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   157                           ;! ---------------------------------------------------------------------------------
+   158                           ;! (0) _main                                                 0     0      0       0
+   159                           ;! ---------------------------------------------------------------------------------
+   160                           ;! Estimated maximum stack depth 0
+   161                           ;! ---------------------------------------------------------------------------------
+   162                           ;!
+   163                           ;! Call Graph Graphs:
+   164                           ;!
+   165                           ;! _main (ROOT)
+   166                           ;!
+   167                           
+   168                           ;! Address spaces:
+   169                           
+   170                           ;!Name               Size   Autos  Total    Cost      Usage
+   171                           ;!BITCOMMON            E      0       0       0        0.0%
+   172                           ;!EEDATA             100      0       0       0        0.0%
+   173                           ;!NULL                 0      0       0       0        0.0%
+   174                           ;!CODE                 0      0       0       0        0.0%
+   175                           ;!COMMON               E      0       4       1       28.6%
+   176                           ;!BITSFR0              0      0       0       1        0.0%
+   177                           ;!SFR0                 0      0       0       1        0.0%
+   178                           ;!BITSFR1              0      0       0       2        0.0%
+   179                           ;!SFR1                 0      0       0       2        0.0%
+   180                           ;!STACK                0      0       0       2        0.0%
+   181                           ;!ABS                  0      0       4       3        0.0%
+   182                           ;!BITBANK0            50      0       0       4        0.0%
+   183                           ;!BITSFR3              0      0       0       4        0.0%
+   184                           ;!SFR3                 0      0       0       4        0.0%
+   185                           ;!BANK0               50      0       0       5        0.0%
+   186                           ;!BITSFR2              0      0       0       5        0.0%
+   187                           ;!SFR2                 0      0       0       5        0.0%
+   188                           ;!BITBANK1            50      0       0       6        0.0%
+   189                           ;!BANK1               50      0       0       7        0.0%
+   190                           ;!BITBANK3            60      0       0       8        0.0%
+   191                           ;!BANK3               60      0       0       9        0.0%
+   192                           ;!BITBANK2            60      0       0      10        0.0%
+   193                           ;!BANK2               60      0       0      11        0.0%
+   194                           ;!DATA                 0      0       4      12        0.0%
+   195                           
+   196                           	global	_main
+   197                           
+   198 ;; *************** function _main *****************
+   199 ;; Defined at:
+   200 ;;		line 14 in file "sistemaSeguridad.c"
+   201 ;; Parameters:    Size  Location     Type
+   202 ;;		None
+   203 ;; Auto vars:     Size  Location     Type
+   204 ;;		None
+   205 ;; Return value:  Size  Location     Type
+   206 ;;		None               void
+   207 ;; Registers used:
+   208 ;;		status,2
+   209 ;; Tracked objects:
+   210 ;;		On entry : 17F/0
+   211 ;;		On exit  : 0/0
+   212 ;;		Unchanged: 0/0
+   213 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   214 ;;      Params:         0       0       0       0       0
+   215 ;;      Locals:         0       0       0       0       0
+   216 ;;      Temps:          0       0       0       0       0
+   217 ;;      Totals:         0       0       0       0       0
+   218 ;;Total ram usage:        0 bytes
+   219 ;; This function calls:
+   220 ;;		Nothing
+   221 ;; This function is called by:
+   222 ;;		Startup code after reset
+   223 ;; This function uses a non-reentrant model
+   224 ;;
+   225                           psect	maintext
+   226                           psect	maintext
+   227                           	file	"sistemaSeguridad.c"
+   228                           	line	14
+   229                           	global	__size_of_main
+   230  0066                     	__size_of_main	equ	__end_of_main-_main
+   231                           	
+   232  079A                     _main:	
+   233                           	opt	stack 8
+   234                           ; Regs used in _main: [status,2]
+   235                           	line	15
+   236                           	
+   237  079A                     l499:	
+   238                           ;sistemaSeguridad.c: 15: ANSELH =0x00;
+   239  079A  1683               	bsf	status, 5	;RP0=1, select bank3
+   240  079B  1703               	bsf	status, 6	;RP1=1, select bank3
+   241  079C  0189               	clrf	(393)^0180h	;volatile
+   242                           	line	16
+   243                           ;sistemaSeguridad.c: 16: ANSEL=0x00;
+   244  079D  0188               	clrf	(392)^0180h	;volatile
+   245                           	line	18
+   246                           ;sistemaSeguridad.c: 18: TRISD=0x00;
+   247  079E  1683               	bsf	status, 5	;RP0=1, select bank1
+   248  079F  1303               	bcf	status, 6	;RP1=0, select bank1
+   249  07A0  0188               	clrf	(136)^080h	;volatile
+   250                           	line	21
+   251                           ;sistemaSeguridad.c: 21: PORTD=0x00;
+   252  07A1  1283               	bcf	status, 5	;RP0=0, select bank0
+   253  07A2  1303               	bcf	status, 6	;RP1=0, select bank0
+   254  07A3  0188               	clrf	(8)	;volatile
+   255  07A4  2FA5               	goto	l501
+   256                           	line	23
+   257                           ;sistemaSeguridad.c: 23: while(1){
+   258                           	
+   259  07A5                     l19:	
+   260                           	line	24
+   261                           	
+   262  07A5                     l501:	
+   263                           ;sistemaSeguridad.c: 24: if(PORTBbits.RB7==1){
+   264  07A5  1F86               	btfss	(6),7	;volatile
+   265  07A6  2FA8               	goto	u11
+   266  07A7  2FA9               	goto	u10
+   267  07A8                     u11:
+   268  07A8  2FD2               	goto	l20
+   269  07A9                     u10:
+   270                           	line	25
+   271                           	
+   272  07A9                     l503:	
+   273                           ;sistemaSeguridad.c: 25: if(PORTBbits.RB0==0){
+   274  07A9  1806               	btfsc	(6),0	;volatile
+   275  07AA  2FAC               	goto	u21
+   276  07AB  2FAD               	goto	u20
+   277  07AC                     u21:
+   278  07AC  2FB0               	goto	l21
+   279  07AD                     u20:
+   280                           	line	26
+   281                           	
+   282  07AD                     l505:	
+   283                           ;sistemaSeguridad.c: 26: PORTDbits.RD0=0;
+   284  07AD  1008               	bcf	(8),0	;volatile
+   285                           	line	27
+   286                           ;sistemaSeguridad.c: 27: PORTDbits.RD1=1;
+   287  07AE  1488               	bsf	(8),1	;volatile
+   288                           	line	28
+   289                           ;sistemaSeguridad.c: 28: }
+   290  07AF  2FCA               	goto	l22
+   291                           	line	29
+   292                           	
+   293  07B0                     l21:	
+   294                           ;sistemaSeguridad.c: 29: else if(PORTBbits.RB4==0){
+   295  07B0  1A06               	btfsc	(6),4	;volatile
+   296  07B1  2FB3               	goto	u31
+   297  07B2  2FB4               	goto	u30
+   298  07B3                     u31:
+   299  07B3  2FB7               	goto	l23
+   300  07B4                     u30:
+   301                           	line	30
+   302                           	
+   303  07B4                     l507:	
+   304                           ;sistemaSeguridad.c: 30: PORTDbits.RD0=0;
+   305  07B4  1008               	bcf	(8),0	;volatile
+   306                           	line	31
+   307                           ;sistemaSeguridad.c: 31: PORTDbits.RD1=1;
+   308  07B5  1488               	bsf	(8),1	;volatile
+   309                           	line	32
+   310                           ;sistemaSeguridad.c: 32: }
+   311  07B6  2FCA               	goto	l22
+   312                           	line	33
+   313                           	
+   314  07B7                     l23:	
+   315                           ;sistemaSeguridad.c: 33: else if(PORTBbits.RB5==0){
+   316  07B7  1A86               	btfsc	(6),5	;volatile
+   317  07B8  2FBA               	goto	u41
+   318  07B9  2FBB               	goto	u40
+   319  07BA                     u41:
+   320  07BA  2FBE               	goto	l25
+   321  07BB                     u40:
+   322                           	line	34
+   323                           	
+   324  07BB                     l509:	
+   325                           ;sistemaSeguridad.c: 34: PORTDbits.RD0=0;
+   326  07BB  1008               	bcf	(8),0	;volatile
+   327                           	line	35
+   328                           ;sistemaSeguridad.c: 35: PORTDbits.RD1=1;
+   329  07BC  1488               	bsf	(8),1	;volatile
+   330                           	line	36
+   331                           ;sistemaSeguridad.c: 36: }
+   332  07BD  2FCA               	goto	l22
+   333                           	line	37
+   334                           	
+   335  07BE                     l25:	
+   336                           ;sistemaSeguridad.c: 37: else if(PORTBbits.RB6==0){
+   337  07BE  1B06               	btfsc	(6),6	;volatile
+   338  07BF  2FC1               	goto	u51
+   339  07C0  2FC2               	goto	u50
+   340  07C1                     u51:
+   341  07C1  2FC5               	goto	l27
+   342  07C2                     u50:
+   343                           	line	38
+   344                           	
+   345  07C2                     l511:	
+   346                           ;sistemaSeguridad.c: 38: PORTDbits.RD0=0;
+   347  07C2  1008               	bcf	(8),0	;volatile
+   348                           	line	39
+   349                           ;sistemaSeguridad.c: 39: PORTDbits.RD1=1;
+   350  07C3  1488               	bsf	(8),1	;volatile
+   351                           	line	40
+   352                           ;sistemaSeguridad.c: 40: }
+   353  07C4  2FCA               	goto	l22
+   354                           	line	41
+   355                           	
+   356  07C5                     l27:	
+   357                           	line	42
+   358                           ;sistemaSeguridad.c: 41: else{
+   359                           ;sistemaSeguridad.c: 42: PORTDbits.RD0=1;
+   360  07C5  1408               	bsf	(8),0	;volatile
+   361                           	line	43
+   362                           ;sistemaSeguridad.c: 43: PORTDbits.RD1=0;
+   363  07C6  1088               	bcf	(8),1	;volatile
+   364  07C7  2FCA               	goto	l22
+   365                           	line	44
+   366                           	
+   367  07C8                     l28:	
+   368  07C8  2FCA               	goto	l22
+   369                           	
+   370  07C9                     l26:	
+   371  07C9  2FCA               	goto	l22
+   372                           	
+   373  07CA                     l24:	
+   374                           	
+   375  07CA                     l22:	
+   376                           	line	45
+   377                           ;sistemaSeguridad.c: 44: }
+   378                           ;sistemaSeguridad.c: 45: if(PORTBbits.RB1==1){
+   379  07CA  1C86               	btfss	(6),1	;volatile
+   380  07CB  2FCD               	goto	u61
+   381  07CC  2FCE               	goto	u60
+   382  07CD                     u61:
+   383  07CD  2FA5               	goto	l501
+   384  07CE                     u60:
+   385                           	line	47
+   386                           	
+   387  07CE                     l513:	
+   388                           ;sistemaSeguridad.c: 47: PORTDbits.RD0=1;
+   389  07CE  1408               	bsf	(8),0	;volatile
+   390                           	line	49
+   391                           ;sistemaSeguridad.c: 49: PORTDbits.RD1=0;
+   392  07CF  1088               	bcf	(8),1	;volatile
+   393  07D0  2FA5               	goto	l501
+   394                           	line	50
+   395                           	
+   396  07D1                     l29:	
+   397                           	line	52
+   398                           ;sistemaSeguridad.c: 50: }
+   399                           ;sistemaSeguridad.c: 52: }
+   400  07D1  2FA5               	goto	l501
+   401                           	line	53
+   402                           	
+   403  07D2                     l20:	
+   404                           	line	54
+   405                           ;sistemaSeguridad.c: 53: else{
+   406                           ;sistemaSeguridad.c: 54: if(PORTBbits.RB0==0){
+   407  07D2  1806               	btfsc	(6),0	;volatile
+   408  07D3  2FD5               	goto	u71
+   409  07D4  2FD6               	goto	u70
+   410  07D5                     u71:
+   411  07D5  2FD9               	goto	l31
+   412  07D6                     u70:
+   413                           	line	55
+   414                           	
+   415  07D6                     l515:	
+   416                           ;sistemaSeguridad.c: 55: PORTDbits.RD0=0;
+   417  07D6  1008               	bcf	(8),0	;volatile
+   418                           	line	56
+   419                           ;sistemaSeguridad.c: 56: PORTDbits.RD2=1;
+   420  07D7  1508               	bsf	(8),2	;volatile
+   421                           	line	57
+   422                           ;sistemaSeguridad.c: 57: }
+   423  07D8  2FF3               	goto	l32
+   424                           	line	58
+   425                           	
+   426  07D9                     l31:	
+   427                           ;sistemaSeguridad.c: 58: else if(PORTBbits.RB4==0){
+   428  07D9  1A06               	btfsc	(6),4	;volatile
+   429  07DA  2FDC               	goto	u81
+   430  07DB  2FDD               	goto	u80
+   431  07DC                     u81:
+   432  07DC  2FE0               	goto	l33
+   433  07DD                     u80:
+   434                           	line	59
+   435                           	
+   436  07DD                     l517:	
+   437                           ;sistemaSeguridad.c: 59: PORTDbits.RD0=0;
+   438  07DD  1008               	bcf	(8),0	;volatile
+   439                           	line	60
+   440                           ;sistemaSeguridad.c: 60: PORTDbits.RD2=1;
+   441  07DE  1508               	bsf	(8),2	;volatile
+   442                           	line	61
+   443                           ;sistemaSeguridad.c: 61: }
+   444  07DF  2FF3               	goto	l32
+   445                           	line	62
+   446                           	
+   447  07E0                     l33:	
+   448                           ;sistemaSeguridad.c: 62: else if(PORTBbits.RB5==0){
+   449  07E0  1A86               	btfsc	(6),5	;volatile
+   450  07E1  2FE3               	goto	u91
+   451  07E2  2FE4               	goto	u90
+   452  07E3                     u91:
+   453  07E3  2FE7               	goto	l35
+   454  07E4                     u90:
+   455                           	line	63
+   456                           	
+   457  07E4                     l519:	
+   458                           ;sistemaSeguridad.c: 63: PORTDbits.RD0=0;
+   459  07E4  1008               	bcf	(8),0	;volatile
+   460                           	line	64
+   461                           ;sistemaSeguridad.c: 64: PORTDbits.RD2=1;
+   462  07E5  1508               	bsf	(8),2	;volatile
+   463                           	line	65
+   464                           ;sistemaSeguridad.c: 65: }
+   465  07E6  2FF3               	goto	l32
+   466                           	line	66
+   467                           	
+   468  07E7                     l35:	
+   469                           ;sistemaSeguridad.c: 66: else if(PORTBbits.RB6==0){
+   470  07E7  1B06               	btfsc	(6),6	;volatile
+   471  07E8  2FEA               	goto	u101
+   472  07E9  2FEB               	goto	u100
+   473  07EA                     u101:
+   474  07EA  2FEE               	goto	l37
+   475  07EB                     u100:
+   476                           	line	67
+   477                           	
+   478  07EB                     l521:	
+   479                           ;sistemaSeguridad.c: 67: PORTDbits.RD0=0;
+   480  07EB  1008               	bcf	(8),0	;volatile
+   481                           	line	68
+   482                           ;sistemaSeguridad.c: 68: PORTDbits.RD2=1;
+   483  07EC  1508               	bsf	(8),2	;volatile
+   484                           	line	69
+   485                           ;sistemaSeguridad.c: 69: }
+   486  07ED  2FF3               	goto	l32
+   487                           	line	70
+   488                           	
+   489  07EE                     l37:	
+   490                           	line	71
+   491                           ;sistemaSeguridad.c: 70: else{
+   492                           ;sistemaSeguridad.c: 71: PORTDbits.RD0=1;
+   493  07EE  1408               	bsf	(8),0	;volatile
+   494                           	line	72
+   495                           ;sistemaSeguridad.c: 72: PORTDbits.RD2=0;
+   496  07EF  1108               	bcf	(8),2	;volatile
+   497  07F0  2FF3               	goto	l32
+   498                           	line	73
+   499                           	
+   500  07F1                     l38:	
+   501  07F1  2FF3               	goto	l32
+   502                           	
+   503  07F2                     l36:	
+   504  07F2  2FF3               	goto	l32
+   505                           	
+   506  07F3                     l34:	
+   507                           	
+   508  07F3                     l32:	
+   509                           	line	74
+   510                           ;sistemaSeguridad.c: 73: }
+   511                           ;sistemaSeguridad.c: 74: if(PORTBbits.RB1==1){
+   512  07F3  1C86               	btfss	(6),1	;volatile
+   513  07F4  2FF6               	goto	u111
+   514  07F5  2FF7               	goto	u110
+   515  07F6                     u111:
+   516  07F6  2FA5               	goto	l501
+   517  07F7                     u110:
+   518                           	line	75
+   519                           	
+   520  07F7                     l523:	
+   521                           ;sistemaSeguridad.c: 75: PORTDbits.RD0=1;
+   522  07F7  1408               	bsf	(8),0	;volatile
+   523                           	line	77
+   524                           ;sistemaSeguridad.c: 77: PORTDbits.RD2=0;
+   525  07F8  1108               	bcf	(8),2	;volatile
+   526  07F9  2FA5               	goto	l501
+   527                           	line	78
+   528                           	
+   529  07FA                     l39:	
+   530  07FA  2FA5               	goto	l501
+   531                           	line	79
+   532                           	
+   533  07FB                     l30:	
+   534  07FB  2FA5               	goto	l501
+   535                           	line	81
+   536                           	
+   537  07FC                     l40:	
+   538                           	line	23
+   539  07FC  2FA5               	goto	l501
+   540                           	
+   541  07FD                     l41:	
+   542                           	line	82
+   543                           	
+   544  07FD                     l42:	
+   545                           	global	start
+   546  07FD  120A  118A  2800   	ljmp	start
+   547                           	opt stack 0
+   548                           GLOBAL	__end_of_main
+   549  0800                     	__end_of_main:
+   550                           	signat	_main,88
+   551                           psect	maintext
+   552                           	global	btemp
+   553  007E                     	btemp set 07Eh
+   554                           
+   555                           	DABS	1,126,2	;btemp
+   556                           	global	wtemp0
+   557  007E                     	wtemp0 set btemp
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         4
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      0       4
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      0       4       1       28.6%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       4       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       4      12        0.0%
+
+
+HI-TECH Software PICC Macro Assembler V1.00 build 12136 
+Symbol Table                                                                                   Tue Mar 15 23:49:49 2022
+
+                  l20 07D2                    l21 07B0                    l30 07FB                    l22 07CA  
+                  l31 07D9                    l23 07B7                    l40 07FC                    l32 07F3  
+                  l24 07CA                    l41 07FD                    l33 07E0                    l25 07BE  
+                  l42 07FD                    l34 07F3                    l26 07C9                    l35 07E7  
+                  l27 07C5                    l19 07A5                    l36 07F2                    l28 07C8  
+                  l37 07EE                    l29 07D1                    l38 07F1                    l39 07FA  
+                  u10 07A9                    u11 07A8                    u20 07AD                    u21 07AC  
+                  u30 07B4                    u31 07B3                    u40 07BB                    u41 07BA  
+                  u50 07C2                    u51 07C1                    u60 07CE                    u61 07CD  
+                  u70 07D6                    u71 07D5                    u80 07DD                    u81 07DC  
+                  u90 07E4                    u91 07E3                   l501 07A5                   l511 07C2  
+                 l503 07A9                   l521 07EB                   l513 07CE                   l505 07AD  
+                 l523 07F7                   l515 07D6                   l507 07B4                   l517 07DD  
+                 l509 07BB                   l519 07E4                   l499 079A                   u100 07EB  
+                 u101 07EA                   u110 07F7                   u111 07F6                  _main 079A  
+                btemp 007E                  start 0000                 ?_main 0000                 _ANSEL 0188  
+               _PORTD 0008                 _TRISD 0088                 status 0003                 wtemp0 007E  
+        __end_of_main 0800                ??_main 0000                _ANSELH 0189        __pcstackCOMMON 0000  
+          __pmaintext 079A  end_of_initialization 0796             _PORTBbits 0006             _PORTDbits 0008  
+ start_initialization 0792           __pbssCOMMON 0070             _contador1 0070             _contador2 0072  
+       __size_of_main 0066  
